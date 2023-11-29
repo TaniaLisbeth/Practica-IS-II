@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Factura</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    form {
+      max-width: 600px;
+      margin: auto;
+    }
+    label {
+      display: block;
+      margin: 10px 0;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0 20px 0;
+      display: inline-block;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="facturaForm">
+    <h2>Factura</h2>
+
+    <!-- Actualización 1: Cliente y Fecha -->
+    <label for="cliente">Cliente:</label>
+    <input type="text" id="cliente" name="cliente" required>
+
+    <label for="fecha">Fecha:</label>
+    <input type="date" id="fecha" name="fecha" required>
+
+    <!-- Actualización 2: Detalles de la factura -->
+    <h3>Detalles de la factura</h3>
+
+    <label for="producto">Producto:</label>
+    <input type="text" id="producto" name="producto" required>
+
+    <label for="cantidad">Cantidad:</label>
+    <input type="number" id="cantidad" name="cantidad" required>
+
+    <label for="precio">Precio unitario:</label>
+    <input type="number" id="precio" name="precio" step="0.01" required>
+
+    
+    <button type="submit">Generar Factura</button>
+  </form>
+
+  <script>
+    document.getElementById("facturaForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      // Aquí puedes agregar lógica para procesar el formulario, como enviar datos a un servidor o realizar cálculos.
+      alert("¡Factura generada con éxito!");
+    });
+  </script>
+
+</body>
+</html>
